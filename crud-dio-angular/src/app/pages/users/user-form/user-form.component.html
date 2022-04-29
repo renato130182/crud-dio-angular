@@ -4,36 +4,36 @@
         <h1 class="card-title text-center">
             Formulário de usuário.
         </h1>
-        <form action="">
+        <form [formGroup]="userForm">
             <div class="row">
                 <div class="col-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                        <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Digite seu nome">
                         <label for="nome">Nome</label>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome">
+                        <input formControlName="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome">
                         <label for="sobrenome">Sobrenome</label>
                     </div>
                 </div>
                 <div class="col-6 my-4">
                     <div class="form-floating">
-                        <input  type="text" class="form-control" id="idade" placeholder="Digite sua idade">
+                        <input  formControlName="idade" type="text" class="form-control" id="idade" placeholder="Digite sua idade">
                         <label for="idade">Idade</label>
                     </div>
                 </div>
                 <div class="col-6 my-4">
                     <div class="form-floating">
-                        <input  type="text" class="form-control" id="profissao" placeholder="Digite sua profissão">
+                        <input formControlName="profissao" type="text" class="form-control" id="profissao" placeholder="Digite sua profissão">
                         <label for="profissao">Profissão</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12">
-                        <button class="btn btn-outline-success float-start">Enviar</button>
-                        <button class="btn btn-outline-danger float-end">Cancelar</button>
+                        <button class="btn btn-outline-success float-start" (click)="actionUser()">Enviar</button>
+                        <button class="btn btn-outline-danger float-end" [routerLink]=" ">Cancelar</button>
                     </div>
                 </div>
             </div>

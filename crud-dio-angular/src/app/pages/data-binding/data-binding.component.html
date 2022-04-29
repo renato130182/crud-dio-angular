@@ -1,0 +1,15 @@
+<p [class.textRed]="textRed">{{text}}</p>
+<img [src]="imageURL" [alt]="imageDesc" (click)="cliqueImage()">
+<button (click)="clicou()" [style.background-color]="bgColor">Clique</button>
+<input #input type="text" (keyup)="digitou(input.value)" [style.width.px]="widthImage">
+<button [attr.aria-label]="buttonText">{{buttonText}}</button>
+<div class="container">
+    <input type="text" [(ngModel)]="twoWay" placeholder="two way data binding">
+    <label for="">{{twoWay}}</label>
+</div>
+
+<app-button [text]="'Enviar'" [type]="'btn btn-success'" (clickChildren)="clicouNoFilhoEnviar($event)"></app-button>
+<app-button [text]="'Salvar'" (clickChildren)="clicouNoFilho($event)"></app-button>
+<app-life-cicle [num]="num" *ngIf="!destroi"></app-life-cicle>
+<app-button [text]="'Destroi'" (clickChildren)="destroiComponent()" *ngIf="!destroi"></app-button>
+<app-button *ngIf="destroi" [text]="'Reconstroi'" (clickChildren)="reconstroiCompoent()"></app-button>
